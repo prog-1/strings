@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 func InSet(b byte, set string) bool {
 	for _, v := range set {
@@ -22,4 +26,11 @@ func TrimLeft(s string) string {
 
 func main() {
 	fmt.Printf("%q\n", TrimLeft("   \r\r\r\n\t    hello"))
+
+	fmt.Print("Enter a string: ")
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Enter text: ")
+	text, _ := reader.ReadString('\n')
+
+	fmt.Printf("%q\n", TrimLeft(text))
 }
