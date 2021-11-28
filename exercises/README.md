@@ -48,7 +48,7 @@ The same as `03 Count byte`, but counts runes.
 The program must be named `03_count_rune`, and must contain a function
 `CountRune(string) int`.
 
-# 05 ToLower & ToUpper
+## 05 ToLower & ToUpper
 
 Write a program, which ensures a string contains English alphabet letters
 all lower, and all upper cases e.g. `"hEllO"` should become `"hello"` and
@@ -58,7 +58,7 @@ The program must be named `05_lower_uppper`, and must contain two functions:
 - `ToLower(string) string`
 - `ToUpper(string) string`.
 
-# 08 Count words
+## 08 Count words
 
 Write a program which counts words in a string. Words are considered to be
 separated by punctuation and/or spaces. See [unicode.IsSpace] and
@@ -70,7 +70,7 @@ The function must be named `06_count_words`, and must contain a function
 [unicode.IsSpace]: https://pkg.go.dev/unicode#IsSpace
 [unicode.IsPunct]: https://pkg.go.dev/unicode#IsPunct
 
-# 07 Title
+## 07 Title
 
 Write a program, which makes every first letter of every word capital, while
 all other letters should become lower case. E.g. `"heLLO WORLD"` should become
@@ -85,7 +85,7 @@ Note: The program must be implemented using [unicode.ToTitle] and
 [unicode.ToTitle]: https://pkg.go.dev/unicode#ToUpper
 [unicode.ToLower]: https://pkg.go.dev/unicode#ToLower
 
-# 08 Count substrings
+## 08 Count substrings
 
 Write a program which finds how many times a substring exists in a string with
 overlaps. E.g. `"bananas"` contains `"ana"` 2 times.
@@ -93,7 +93,7 @@ overlaps. E.g. `"bananas"` contains `"ana"` 2 times.
 The program must be named `08_count_substrings`, and must contain a function
 `Count(string) int`.
 
-# 09 Dedupe
+## 09 Dedupe
 
 Write a program which dedupes (removes duplicates) a string by dropping
 consequent characters if they are the same e.g. `"000111110001111"` will become
