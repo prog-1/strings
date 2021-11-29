@@ -89,7 +89,7 @@ additional characters.
 
 256 bytes each represent a symbol e.g. 'A' is 65 (0x41), 'a' is 97 (0x61), '0' is
 48 (0x30), ' ' (space) is 32 (0x20), etc. Range [0..31] is reserved for special
-control characters e.g. new line 10 (0x0a), tab 7 (0x07), etc. Those characters
+control characters e.g. new line 10 (0x0a), tab 9 (0x09), etc. Those characters
 used to be recognized by old typewriting machines.
 
 ### Unicode
