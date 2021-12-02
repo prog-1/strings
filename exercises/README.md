@@ -35,8 +35,8 @@ The program must be named `02_check_palindrom`, and must contain a function
 
 ## 03 Count byte
 
-Write a program which counts how may times a given byte could be found in a
-string. E.g. `hello` contains byte `'l'` (ASCII 108 or 0x6c) 2 times.
+Write a program which counts the number of instances of the byte in the string.
+E.g. `hello` contains byte `'l'` (ASCII 108 or 0x6c) 2 times.
 
 The program must be named `03_count_byte`, and must contain a function
 `CountByte(string, byte) int`.
