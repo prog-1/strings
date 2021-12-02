@@ -6,19 +6,19 @@ import (
 	"os"
 )
 
-func InSet(b byte, set string) bool {
+func InSet(b byte, set []byte) bool {
 	for _, v := range set {
-		if v == rune(b) {
+		if v == b {
 			return true
 		}
 	}
 	return false
 }
 
-const trimSet = " \r\n\t"
+var trimSet = []byte(" \r\n\t")
 
 func TrimLeft(s string) string {
-	for len(s) > 0 && InSet(s[0], trimSet) {
+	for s != "" && InSet(s[0], trimSet) {
 		s = s[1:]
 	}
 	return s
