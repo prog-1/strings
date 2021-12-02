@@ -58,7 +58,7 @@ The program must be named `05_lower_uppper`, and must contain two functions:
 - `ToLower(string) string`
 - `ToUpper(string) string`.
 
-## 08 Count words
+## 06 Count words
 
 Write a program which counts words in a string. Words are considered to be
 separated by punctuation and/or spaces. See [unicode.IsSpace] and
