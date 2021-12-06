@@ -25,13 +25,13 @@ Hint: Use `01_trim` program as an example.
 
 [unicode.IsSpace]: https://pkg.go.dev/unicode#IsSpace
 
-## 02 Palindrom
+## 02 Palindrome
 
-Write a program which checks whether a given string is a palindrom (could be
+Write a program which checks whether a given string is a palindrome (could be
 read left-to-right and right-to-left in the same way).
 
-The program must be named `02_check_palindrom`, and must contain a function
-`IsPalidndrom(string) bool`.
+The program must be named `02_check_palindrome`, and must contain a function
+`IsPalidndrome(string) bool`.
 
 ## 03 Count byte
 
@@ -58,7 +58,7 @@ The program must be named `05_lower_uppper`, and must contain two functions:
 - `ToLower(string) string`
 - `ToUpper(string) string`.
 
-## 08 Count words
+## 06 Count words
 
 Write a program which counts words in a string. Words are considered to be
 separated by punctuation and/or spaces. See [unicode.IsSpace] and
