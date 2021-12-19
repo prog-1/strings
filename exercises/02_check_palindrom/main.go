@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func IsPalindrom(s string) bool {
 	r := []rune(s)
 
@@ -12,4 +14,12 @@ func IsPalindrom(s string) bool {
 }
 
 func main() {
+	var s string
+	fmt.Print("Enter text: ")
+	fmt.Scan(&s)
+	if IsPalindrom(s) {
+		fmt.Println("String is palindrom")
+	} else {
+		fmt.Println("String is not palindrom")
+	}
 }
