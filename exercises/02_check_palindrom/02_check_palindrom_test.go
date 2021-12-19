@@ -2,7 +2,7 @@ package main
 
 import "testing"
 
-func TestTrimRight(t *testing.T) {
+func TestIsPalindrom(t *testing.T) {
 	for _, tc := range []struct {
 		input string
 		want  bool
