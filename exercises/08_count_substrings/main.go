@@ -6,34 +6,26 @@ import (
 	"os"
 )
 
-func testEq(a, b []slice) bool {
-	for i := range a {
-		if a[i] != b[i] {
-			return false
+func Count(s, sub string) int {
+	var cnt int
+	if len(s) > len(sub) {
+		for i := 0; i < len(s)-len(sub); i++ {
+			if s[i:i+len(sub)] == sub {
+				cnt++
+			}
 		}
+		return cnt
 	}
-	return true
+	return 0
 }
-
 func main() {
-	r := bufio.NewReader(os.Stdin)
-	scanner := bufio.NewScanner(r)
-	fmt.Print("Enter a string: ")
+	scanner := bufio.NewScanner(os.Stdin)
+	fmt.Println("Program finds how many times a substring exists in a string with overlaps.")
+	fmt.Println("Enter the string")
 	scanner.Scan()
 	s := scanner.Text()
-	fmt.Print("Enter a substring: ")
+	fmt.Println("Enter the substring")
 	scanner.Scan()
 	sub := scanner.Text()
-	if i := substr(sub, s); i >= 0 {
-		fmt.Printf("The substring %q occurs in  the string %q at index %d.", sub, s, i)
-	} else {
-		fmt.Printf("The substring %q does not occur in  the string %q", sub, s)
-	}
-}
-func substr(sub, s string) int {
-	for l := range s {
-
-	}
-
-	return -1
+	fmt.Println(Count(s, sub))
 }
