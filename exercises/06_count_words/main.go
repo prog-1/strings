@@ -11,7 +11,7 @@ func IsSep(r rune) bool { return unicode.IsSpace(r) || unicode.IsPunct(r) || uni
 func CountWords(s string) (cnt int) {
 	wasSep := true
 	for _, r := range s {
-		if IsSep(r) {
+		if unicode.IsSpace(r) || unicode.IsPunct(r) {
 			wasSep = true
 		} else if wasSep {
 			wasSep = false
