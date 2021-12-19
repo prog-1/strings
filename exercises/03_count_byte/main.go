@@ -1,39 +1,30 @@
 package main
 
 import (
-	"unicode"
+	"bufio"
+	"fmt"
+	"os"
 )
 
-// TestCountWords tests the function `countWords`.
-func TestCountWords() {
-}
-
-func isSep(r rune) bool {
-	return unicode.IsPunct(r) || unicode.IsSpace(r)
-}
-
-// countWords counts the number of words that occurs in a string `s`.
-func countWords(s string) (cnt int) {
-	wasLetter := false
-	for _, v := range s {
-		//if isSep(v) && wasLetter {
-		//wasLetter = false
-		//} else if !wasLetter {
-		//cnt++
-		//wasLetter = true
-		//}
-		if isSep(v) == true {
-			wasLetter = false
-		} else if !wasLetter {
-			cnt++
-			wasLetter = true
+func CountByte(s string, b byte) int {
+	var count int
+	for i := 0; i < len(s); i++ {
+		if s[i] == b {
+			count++
 		}
+
 	}
-	return cnt
+	return count
 }
 
 func main() {
-	//fmt.Println(isSep('\n'))
-	TestCountWords()
-	//fmt.Println(countWords("привет, всем"))
+	fmt.Println("This program counts the number of instances of the byte in the string.")
+	scanner := bufio.NewScanner(os.Stdin)
+	fmt.Print("Enter a string: ")
+	scanner.Scan()
+	s := scanner.Text()
+	fmt.Println("Enter a byte: ")
+	var b byte
+	fmt.Scan(&b)
+	fmt.Println(CountByte(s, b))
 }

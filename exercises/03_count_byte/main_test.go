@@ -1,28 +1,25 @@
 package main
 
-import (
-	"fmt"
-	"unicode"
-)
+import "testing"
 
-// TestCountWords tests the function `countWords`.
-func TestCountWords() {
+func TestCountByte(t *testing.T) {
 	for _, tc := range []struct {
-		name  string
-		input string
-		want  int
+		name   string
+		input  string
+		input2 byte
+		want   int
 	}{
-		{"empty", "", 0},
-		{"separators", ".., \t\n!@#$%^&*-=+", 0},
-		{"single word", "abc", 1},
-		{"single word with spaces", "   ccc  ", 1},
-		{"two words separated", "aa b", 2},
-		{"words plus digits", "1a 1 b1", 3},
-		{"mixed unicode", "čeлovek", 1},
-		{"words plus punctuation", "cat, dog, fish", 3},
+		{"letter is not repeated", "mango", byte('l'), 0},
+		{"letter is not repeated", "mango", byte('a'), 1},
+		{"letter is repeated twice", "hello", byte('p'), 0},
+		{"letter is repeated twice", "hello", byte('e'), 1},
+		{"letter is repeated twice", "hello", byte('l'), 2},
+		{"Latvian letters", "abčdē", 0xc4, 2},
 	} {
-		if got := countWords(tc.input); got != tc.want {
-			fmt.Printf("FAIL %s: got %v, want %v\n", tc.name, got, tc.want)
-		}
+		t.Run(tc.name, func(t *testing.T) {
+			if got := CountByte(tc.input, tc.input2); got != tc.want {
+				t.Errorf("got = %q, want = %q", got, tc.want)
+			}
+		})
 	}
 }
