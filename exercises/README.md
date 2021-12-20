@@ -91,7 +91,7 @@ Write a program which finds how many times a substring exists in a string with
 overlaps. E.g. `"bananas"` contains `"ana"` 2 times.
 
 The program must be named `08_count_substrings`, and must contain a function
-`Count(string) int`.
+`Count(s, sub string) int`.
 
 ## 09 Dedupe
 
