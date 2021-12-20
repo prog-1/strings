@@ -21,6 +21,6 @@ func main() {
 	s, _ := reader.ReadString('\n')
 	var r rune
 	fmt.Println("Enter rune:")
-	r, _, _ = reader.ReadRune()
+	r, _, _ = reader.ReadRune() // idea of ​​a line from someone else's code, because can't understand how to write
 	fmt.Println(CountRune(s, r))
 }
