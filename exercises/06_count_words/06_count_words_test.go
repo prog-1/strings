@@ -1,12 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"testing"
 )
 
 func TestCountWords(t *testing.T) {
-	pass := true
 	for _, tc := range []struct {
 		name  string
 		input string
@@ -23,11 +21,7 @@ func TestCountWords(t *testing.T) {
 		{"mixed string", "11 abc ", 2},
 	} {
 		if got := countWords(tc.input); got != tc.want {
-			fmt.Printf("%s\n\tFAIL: got %v, want %v\n", tc.name, got, tc.want)
-			pass = false
+			t.Errorf("got = %v, want = %v", got, tc.want)
 		}
-	}
-	if pass {
-		fmt.Println("ALL PASS")
 	}
 }
