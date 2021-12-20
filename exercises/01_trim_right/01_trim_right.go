@@ -25,8 +25,6 @@ func TrimRight(s string) string {
 }
 
 func main() {
-	fmt.Printf("%q\n", TrimRight("   \r\r\r\n\t    hello"))
-
 	fmt.Print("Enter a string: ")
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Print("Enter text: ")
