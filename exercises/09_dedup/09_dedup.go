@@ -13,6 +13,7 @@ func Dedup(s string) string {
 		if rune(w) != a {
 			r = append(r, w)
 		}
+		a = rune(w)
 	}
 	return string(r)
 }
