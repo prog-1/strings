@@ -16,6 +16,9 @@ func TestDedup(t *testing.T) {
 		{"number with duplicate", "000111110001111", "0101"},
 		{"two words with duplicate", "piiizza tomaaato", "piza tomato"},
 		{"unicode", "приввееет", "привет"},
+		{"spaces", "   ", " "},
+		{"left spaces and word", "ab   ", "ab "},
+		{"right spaces and world", "   ab", " ab"},
 	} {
 		t.Run(tc.name, func(t *testing.T) {
 			if got := Dedup(tc.input); got != tc.want {
