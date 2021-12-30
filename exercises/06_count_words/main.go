@@ -11,7 +11,7 @@ func IsSep(r rune) bool {
 	return unicode.IsPunct(r) || unicode.IsSpace(r) || unicode.IsSymbol(r)
 }
 
-// countWords counts the number of words that occurs in a string `s`.
+// CountWords counts the number of words that occurs in a string `s`.
 func CountWords(s string) (cnt int) {
 	wasSep := true
 	for _, r := range s {
@@ -27,7 +27,7 @@ func CountWords(s string) (cnt int) {
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
-	fmt.Println("Enter text:")
+	fmt.Print("Enter text: ")
 	scanner.Scan()
 	s := scanner.Text()
 	fmt.Printf("There are %d words in the text.\n", CountWords(s))
