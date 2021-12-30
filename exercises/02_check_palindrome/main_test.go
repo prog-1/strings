@@ -2,7 +2,7 @@ package main
 
 import "testing"
 
-func TestIsPalindrom(t *testing.T) {
+func TestIsPalindrome(t *testing.T) {
 	for _, tc := range []struct {
 		input string
 		want  bool
@@ -10,11 +10,13 @@ func TestIsPalindrom(t *testing.T) {
 		{"", true},
 		{"abc", false},
 		{"aaa", true},
+		{"aba", true},
 		{"123", false},
 		{"242", true},
 		{"a", true},
 		{"ū", true},
 		{"uūu", true},
+		{"ab", false},
 		{"bb", true},
 		{"33", true},
 		{"dc", false},
@@ -26,7 +28,7 @@ func TestIsPalindrom(t *testing.T) {
 		{"   abc   ", false},
 	} {
 		t.Run(tc.input, func(t *testing.T) {
-			if got := IsPalindrom(tc.input); got != tc.want {
+			if got := IsPalindrome(tc.input); got != tc.want {
 				t.Errorf("got = %v, want = %v", got, tc.want)
 			}
 		})
