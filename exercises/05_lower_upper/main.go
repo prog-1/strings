@@ -4,15 +4,15 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"unicode"
 )
 
 func ToLower(s string) string {
 	var r []rune
-	if len(s) >= 1 {
-		for _, i := range s {
-			r = append(r, unicode.ToLower(i))
-			i++
+	for _, c := range s {
+		if 'A' <= c && c <= 'Z' {
+			r = append(r, 'a'+c-'A')
+		} else {
+			r = append(r, c)
 		}
 	}
 	return string(r)
@@ -20,19 +20,23 @@ func ToLower(s string) string {
 
 func ToUpper(s string) string {
 	var r []rune
-	if len(s) >= 1 {
-		for _, i := range s {
-			r = append(r, unicode.ToUpper(i))
-			i++
+	for _, c := range s {
+		if 'a' <= c && c <= 'z' {
+			r = append(r, 'A'+c-'a')
+		} else {
+			r = append(r, c)
 		}
 	}
 	return string(r)
 }
+
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
-	fmt.Println("Enter string: ")
+	fmt.Print("Enter text: ")
 	scanner.Scan()
 	s := scanner.Text()
-	fmt.Println("All lower cases:", ToLower(s))
-	fmt.Println("All upper cases:", ToUpper(s))
+	fmt.Print("All lower cases: ")
+	fmt.Printf("%q -> %q\n", s, ToLower(s))
+	fmt.Print("All upper cases: ")
+	fmt.Printf("%q -> %q\n", s, ToUpper(s))
 }
